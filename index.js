@@ -26,8 +26,14 @@ mongoose.connect(process.env.MONGO_URI, {
 //     res.send('Expense Tracker Backend is running');
 // });
 
+const authRoutes = require("./routes/auth");
 const expensesRouter = require('./routes/expenses');
+
+
+app.use("/api/auth", authRoutes);
 app.use('/api/expenses', expensesRouter);
+
+
 
 // Start server
 app.listen(PORT, () => {
