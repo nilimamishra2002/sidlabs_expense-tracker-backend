@@ -35,3 +35,13 @@ exports.login = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
+
+exports.logout = async (req, res) => {
+  try {
+    // Just inform client to delete token
+    return res.json({ message: "Logged out successfully" });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+};
+
