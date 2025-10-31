@@ -27,8 +27,6 @@ exports.login = async (req, res) => {
       return res.status(400).json({ message: "Email and password required" });
 
     const user = await User.findOne({ email });
-    console.log(" Login request for:", email);
-    console.log(" User found:", user);
 
     if (!user) return res.status(400).json({ message: "Invalid credentials" });
 
