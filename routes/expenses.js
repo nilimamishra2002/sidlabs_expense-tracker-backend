@@ -24,7 +24,6 @@ router.post("/", auth, validateExpense, async (req, res) => {
 
 // Get all (with optional filters) - only for logged-in user
 router.get("/",auth, async (req, res) => {
-  console.log("Fetching expenses for user:", req.user.userId);
   try {
     const { category, from, to } = req.query;
     const filter = { user: req.user.userId }; // only fetch expenses for logged-in user
